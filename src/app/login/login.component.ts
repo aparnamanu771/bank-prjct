@@ -11,8 +11,8 @@ export class LoginComponent implements OnInit {
 
   inputplaceholder="Account Number"
 
-  // acno=''
-  // psw=''
+  acno=''
+  psw=''
 
   userDetails:any={
     1000:{acno:1000,username:"anu",password:"abc123",balance:0},
@@ -26,10 +26,32 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
 
   }
-//  login(){
+ login(){
   
-//   var acnum= this.acno
-//   var pswrd= this.psw
+  var acnum= this.acno
+  var psw= this.psw
+  var userDetails= this.userDetails
+  if(acnum in userDetails){
+    if(psw==userDetails[acnum]["password"]){
+      alert("login success")
+    }
+    else{
+      alert("incurrect password")
+    }
+  }
+  else{
+    alert("acno incurrect or not registerd yet")
+  }
+
+// alert('login clicked')
+  }
+
+
+
+// login(a:any,b:any){
+  
+//   var acnum= a.value
+//   var pswrd= b.value
 //   var userDetails= this.userDetails
 //   if(acnum in userDetails){
 //     if(pswrd==userDetails[acnum]["password"]){
@@ -48,25 +70,25 @@ export class LoginComponent implements OnInit {
 
 
 
-login(a:any,b:any){
+// login(a:any,b:any){
   
-  var acnum= a.value
-  var pswrd= b.value
-  var userDetails= this.userDetails
-  if(acnum in userDetails){
-    if(pswrd==userDetails[acnum]["password"]){
-      alert("login success")
-    }
-    else{
-      alert("incurrect password")
-    }
-  }
-  else{
-    alert("acno incurrect or not registerd yet")
-  }
+//   var acnum= a.value
+//   var pswrd= b.value
+//   var userDetails= this.userDetails
+//   if(acnum in userDetails){
+//     if(pswrd==userDetails[acnum]["password"]){
+//       alert("login success")
+//     }
+//     else{
+//       alert("incurrect password")
+//     }
+//   }
+//   else{
+//     alert("acno incurrect or not registerd yet")
+//   }
 
-// alert('login clicked')
-  }
+// // alert('login clicked')
+//   }
 
 
 
