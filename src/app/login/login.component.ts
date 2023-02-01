@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-login',
@@ -14,15 +16,8 @@ export class LoginComponent implements OnInit {
   acno=''
   psw=''
 
-  userDetails:any={
-    1000:{acno:1000,username:"anu",password:"abc123",balance:0},
-    1001:{acno:1001,username:"amal",password:"abc123",balance:0},
-    1003:{acno:1003,username:"arun",password:"abc123",balance:0},
-    1004:{acno:1004,username:"akhil",password:"abc123",balance:0},
-    1002:{acno:1002,username:"manu",password:"abc123",balance:0},
-  }
-
-  constructor() {}
+ 
+  constructor(private router:Router,private ds:DataService) {}
   ngOnInit(): void {
 
   }
@@ -30,10 +25,11 @@ export class LoginComponent implements OnInit {
   
   var acnum= this.acno
   var psw= this.psw
-  var userDetails= this.userDetails
+  var userDetails= this.ds.userDetails
   if(acnum in userDetails){
     if(psw==userDetails[acnum]["password"]){
       alert("login success")
+      this.router.navigateByUrl('dashboard')
     }
     else{
       alert("incurrect password")
