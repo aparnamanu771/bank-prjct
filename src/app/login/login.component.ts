@@ -25,22 +25,16 @@ export class LoginComponent implements OnInit {
   
   var acnum= this.acno
   var psw= this.psw
-  var userDetails= this.ds.userDetails
-  if(acnum in userDetails){
-    if(psw==userDetails[acnum]["password"]){
-      alert("login success")
-      this.router.navigateByUrl('dashboard')
-    }
-    else{
-      alert("incurrect password")
-    }
+
+  const result=this.ds.login(acnum,psw)
+  if(result){
+    alert('login success')
+    this.router.navigateByUrl('dashboard')
   }
   else{
-    alert("acno incurrect or not registerd yet")
+    alert('incurrect acno or password')
   }
-
-// alert('login clicked')
-  }
+ }
 
 
 
