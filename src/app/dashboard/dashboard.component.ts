@@ -32,22 +32,26 @@ export class DashboardComponent implements OnInit {
     var amnt=this.amnt
     const result=this.ds.deposit(acno,psw,amnt)
     if(result){
-      alert(`your account has been creadited with amount ${amnt}. and the current balance is ${result}`)
+      alert(`your account has been creadited with amount ${amnt} and the current balance is ${result}`)
     }
+    
+    
     else{
       alert("incorrect account number or password")
     }
 
    }
+  
+
    withdraw(){
     var acno=this.acno1
     var psw=this.psw1
     var amnt=this.amnt1
     const result = this.ds.withdraw(acno,psw,amnt)
-    if(amnt){//error
+    if(result){
       alert(`your account has been debited with amount ${amnt} and the current balance is ${result}`)
     }
     
-   }
-
-}
+  }
+  
+ }

@@ -4,9 +4,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DataService {
-  withdraw(acno: any, psw: any, amnt: any) {
-    throw new Error('Method not implemented.');
-  }
+  // withdraw(acno: any, psw: any, amnt: any) {
+  //   throw new Error('Method not implemented.');
+  // }
 
   currentUser:any
 
@@ -60,31 +60,58 @@ export class DataService {
 
     if(acnum in userDetails){
       if(password == userDetails[acnum]["password"]) {
-        if(amnt< userDetails[acnum]["balance"]){
+        // if(amnt= userDetails[acnum]["balance"]){
 
         // update balance
         userDetails[acnum]["balance"]+=amnt
+        console.log(userDetails);
+        
 
        // return current balance
         return userDetails[acnum][ "balance"]
         }
         else{
-          alert('insufficient balance')
+          // alert('insufficient balance')
           return false
         }
 
        
       }
       else{
-        alert('insufficient balance')
+        // alert('insufficient balance')
+        return false
+      }
+   }
+
+
+   withdraw(acnum:any, password:any, amount:any){
+    let userDetails =this.userDetails
+    // convert string amount to number
+    var amnt = parseInt(amount)
+
+    if(acnum in userDetails){
+      if(password == userDetails[acnum]["password"]) {
+        if(amnt <= userDetails[acnum]["balance"]){
+                    // update balance
+          userDetails[acnum]["balance"]-=amnt
+
+          // rturn curnt balance
+          return userDetails[acnum]["balance"]
+       
+        }
+        else{
+          alert('insufficient balance')
+          return false
+        }
+      }
+      else{
+        alert('incorrect password')
         return false
       }
     }
     else{
-      alert('incorrent acnum')
+      alert('incorrect accountnumber')
       return false
     }
   }
-
-
 }
