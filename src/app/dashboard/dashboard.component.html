@@ -1,1 +1,61 @@
 <h1>welcome {{user}}</h1>
+<div class="row mb-5 p-5 container">
+<div class="col-6 text-center container">
+    
+    <div class="text-center container  w-75 p-5 mt-2" style="background-color: rgb(82, 105, 98);">
+        <h1>DEPOSIT</h1>
+        <form action="">
+        
+            <div class="p-3 mt-2">
+                <input [(ngModel)]="acno" type="text"  id="acid" name="acnum1" class="form-control" placeholder="Account Number">
+            </div>
+            <div class="p-3 mt-2">
+                <input [(ngModel)]="psw" type="passwrd1"  id="psw1" name="password1" class="form-control" placeholder="Enter the Password">
+            </div>
+        
+            <div class="p-3 mt-2">
+                <input [(ngModel)]="amnt" type="text"  id="amouid" name="amnt1" class="form-control" placeholder="Amount">
+            </div>
+                       
+            <div>
+                <button type="button" (click)="withdraw" class="btn btn-outline-light">Deposit</button>
+            </div>
+        
+        
+        </form>
+    </div>
+</div>
+
+
+    
+    
+    <div class="col-6 text-center container">
+        
+        <div class="text-center container  w-75 p-5 mt-2" style="background-color: rgb(82, 105, 98);">
+            <h1>WITHDRAW </h1>
+            <form action="">
+            
+                <div class="p-3 mt-2">
+                    <input [(ngModel)]="acno1" type="text" id="acid1" name="acnum2" class="form-control" placeholder="Account Number">
+                </div>
+            
+                <div class="p-3 mt-2">
+                    <input [(ngModel)]="psw1" type="password" id="Psw2" name="paswrd2" class="form-control" placeholder="Enter the Password">
+                </div>
+                      
+            
+                <div class="p-3 mt-2">
+                    <input [(ngModel)]="amnt1" type="text" id="amouid1"  name="amnt2" class="form-control" placeholder="Amount">
+                </div>
+            
+                    
+                <div>
+                    <button type="button" (click)="deposit" class="btn btn-outline-light">withdraw</button>
+                </div>
+            
+            
+            </form>
+        </div>
+    
+    </div>  
+<!-- </div> -->
