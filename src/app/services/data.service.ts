@@ -123,8 +123,8 @@ export class DataService {
     }
   }
   
-  getTransactions(acno:any){
-    return this.userDetails[acno]["transactions"]
+  getTransactions(Acno:any){
+    return this.userDetails[Acno]["transaction"]
   }
 
 }
