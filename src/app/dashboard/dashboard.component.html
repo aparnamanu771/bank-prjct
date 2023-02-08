@@ -3,61 +3,52 @@
 <div class=" mt-3 p-2 container text-center ms-3 rounded-pill" style="background-color: rgba(41, 37, 37, 0.63);">
     <a style="color: rgb(161, 216, 72);" routerLink="/transactions">View transaction history</a>
 </div>
-
 <div class="row mb-5 p-5 container">
 <div class="col-6 text-center container">
     
     <div class="text-center container  w-75 p-5 mt-2" style="background-color: rgba(82, 105, 98, 0.267);">
         <h1>DEPOSIT</h1>
-        <form action="">
+        <form action="" [formGroup]="depositForm">
         
             <div class="p-3 mt-2">
-                <input [(ngModel)]="acno" type="text"  id="acid" name="acnum1" class="form-control" placeholder="Account Number">
+                <input formControlName="acno" type="text"  id="acid" name="acnum1" class="form-control" placeholder="Account Number">
             </div>
             <div class="p-3 mt-2">
-                <input [(ngModel)]="psw" type="password"  id="psw1" name="password1" class="form-control" placeholder="Enter the Password">
+                <input formControlName="psw" type="password"  id="psw1" name="password1" class="form-control" placeholder="Enter the Password">
             </div>
         
             <div class="p-3 mt-2">
-                <input [(ngModel)]="amnt" type="text"  id="amouid" name="amnt1" class="form-control" placeholder="Amount">
+                <input formControlName="amnt" type="text"  id="amouid" name="amnt1" class="form-control" placeholder="Amount">
             </div>
-                       
+                     
             <div>
                 <button type="button" (click)="deposit()" class="btn btn-outline-light">Deposit</button>
             </div>
-        
-        
         </form>
     </div>
 </div>
 
-
-    
-    
     <div class="col-6 text-center container">
         
         <div class="text-center container  w-75 p-5 mt-2" style="background-color: rgba(82, 105, 98, 0.267);">
             <h1>WITHDRAW </h1>
-            <form action="">
+            <form action="" [formGroup]="withdrawForm">
             
                 <div class="p-3 mt-2">
-                    <input [(ngModel)]="acno1" type="text" id="acid1" name="acnum2" class="form-control" placeholder="Account Number">
+                    <input formControlName="acno1" type="text" id="acid1" name="acnum2" class="form-control" placeholder="Account Number">
                 </div>
             
                 <div class="p-3 mt-2">
-                    <input [(ngModel)]="psw1" type="password" id="Psw2" name="paswrd2" class="form-control" placeholder="Enter the Password">
+                    <input formControlName="psw1" type="password" id="Psw2" name="paswrd2" class="form-control" placeholder="Enter the Password">
                 </div>
                       
-            
                 <div class="p-3 mt-2">
-                    <input [(ngModel)]="amnt1" type="text" id="amouid1"  name="amnt2" class="form-control" placeholder="Amount">
+                    <input formControlName="amnt1" type="text" id="amouid1"  name="amnt2" class="form-control" placeholder="Amount">
                 </div>
             
-                    
                 <div>
                     <button type="button" (click)="withdraw()" class="btn btn-outline-light">withdraw</button>
                 </div>
-            
             
             </form>
         </div>
