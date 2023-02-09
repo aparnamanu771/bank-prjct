@@ -12,7 +12,7 @@
         </div>
 
         <div *ngIf="this.registerForm.get('uname')?.errors && this.registerForm.get('uname')?.touched">
-            <p class="text-danger">Accept only Characters</p>
+            <p style="color: rgb(241, 9, 9);">Accept only Characters</p>
         </div>
 
         <div class="p-3 mt-2">
@@ -20,17 +20,17 @@
         </div>
 
         <div *ngIf="this.registerForm.get('acno')?.errors && this.registerForm.get('acno')?.touched">
-            <p class="text-danger">Accept only Numbers</p>
+            <p style="color: rgb(241, 9, 9);">Accept only Numbers</p>
         </div>
 
         <div class="p-3 mt-2">
             <input formControlName="psw" type="password" id="Psw1" name="paswrd1" class="form-control" placeholder="Enter the Password">
         </div>
         <div *ngIf="this.registerForm.get('psw')?.errors && this.registerForm.get('psw')?.touched">
-            <p class="text-red">Accept only Characters & Numbers</p>
+            <p style="color: rgb(241, 9, 9);">Accept only Characters & Numbers</p>
         </div>           
         <div>
-            <button type="button" (click)="register()" class="btn btn-outline-danger">register</button>
+            <button type="button" (click)="register()" class="btn btn-info">register</button>
         </div>
 
 
