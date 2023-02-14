@@ -1,11 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
-body{
-    background-image: url(./assets/pexels-photo-6052793.webp);
-    background-repeat:repeat;
+.coverbg{
+    background-image: url(./assets/alexander-grey--8a5eJ1-mmQ-unsplash.jpg);
+    background-repeat:no-repeat;
     background-position: center top;
     background-size: cover;
+    height: 100vh;  /*  -------- window height*/
+
     
 }
 .style{
     opacity: 0;
 }
+
+@media (max-width: 767px) { 
+    .coverbg{
+        height: auto;  /*  -------- window height*/
+    
+        
+    }
+ }

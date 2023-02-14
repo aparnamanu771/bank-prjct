@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-deletconform',
@@ -9,7 +9,16 @@ export class DeletconformComponent {
 
   @Input() item:String|undefined
 
+  // event creation
+  @Output() oncancel= new EventEmitter()
   constructor(){ }
 
   ngOnInit(): void{}
+
+  onCancel() {
+    // start event
+
+    this.oncancel.emit()
+
+  }
 }
