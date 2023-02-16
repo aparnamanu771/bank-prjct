@@ -4,18 +4,17 @@
     background-repeat:no-repeat;
     background-position: center top;
     background-size: cover;
-    height: 100vh;  /*  -------- window height*/
-
-    
-}
-.style{
-    opacity: 0;
+    height: 100vh;  
+ 
 }
 
 @media (max-width: 767px) { 
     .coverbg{
-        height: auto;  /*  -------- window height*/
-    
-        
+        height: auto;  
+       
     }
  }
+ 
+ .style{
+    opacity: 0;
+}
