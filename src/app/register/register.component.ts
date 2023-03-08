@@ -38,17 +38,28 @@ register(){
   var acno=this.registerForm.value.acno
   var psw=this.registerForm.value.psw
 if(this.registerForm.valid){
-  const result=this.ds.register(uname,acno,psw)
-  if(result){
-    alert('registerd')
-    this.router.navigateByUrl("")
-  }
-  else{
-    alert("acno already present")
-  }
+
+    this.ds.register(uname,acno,psw).subscribe((result:any)=>{
+      alert(result.message)
+      this.router.navigateByUrl("")
+    },
+    result=>{
+      alert(result.error.message)
+      this.router.navigateByUrl("")
+    }
+    )
+
+  // const result=this.ds.register(uname,acno,psw)
+  // if(result){
+  //   alert('registerd')
+  //   this.router.navigateByUrl("")
+  // }
+  // else{
+  //   alert("acno already present")
+  // }
    
 
-  // console.log(uname,acno,psw);
+  // // console.log(uname,acno,psw);
   
 }
 else{
