@@ -31,7 +31,7 @@ export class DashboardComponent implements OnInit {
 
 
    constructor(private ds:DataService, private fb:FormBuilder, private router:Router) {
-
+    if(localStorage.getItem("currentuser"))
     this.user = JSON.parse(localStorage.getItem("currentUser")||"")
     
     // store object for date
@@ -51,10 +51,10 @@ export class DashboardComponent implements OnInit {
 
  })
    ngOnInit(): void {
-  //   if(!localStorage.getItem("currentAcno")){
-  //     alert('please login')
-  //     this.router.navigateByUrl("")
-  //   }
+    if(!localStorage.getItem("token")){
+      alert('please login')
+      this.router.navigateByUrl("")
+    }
    }
    deposit(){
     var acno=this.depositForm.value.acno
@@ -111,6 +111,7 @@ else{
   logout(){
     localStorage.removeItem("currentUser")
     localStorage.removeItem("currentAcno")
+    localStorage.removeItem("token")
     this.router.navigateByUrl("")
   }
   
@@ -120,5 +121,13 @@ else{
 
   cancel(){
     this.acno=''
+  }
+  Delete(event:any){
+    // alert(event)
+    this.ds.deleteaccount(event).subscribe((result:any)=>{
+      alert(result.message)
+      // this.router.navigateByUrl("")
+      this.logout()
+    })
   }
  }

@@ -231,4 +231,10 @@ export class DataService {
     return this.http.post('http://localhost:3000/transaction',data,this.getToken())
     // return this.userDetails[Acno]['transaction'];
   }
+
+  deleteaccount(acno:any){
+    return this.http.delete('http://localhost:3000/delete/'+acno,this.getToken())
+  }
+
+
 }

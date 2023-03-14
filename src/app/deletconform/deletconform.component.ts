@@ -11,6 +11,8 @@ export class DeletconformComponent {
 
   // event creation
   @Output() oncancel= new EventEmitter()
+
+  @Output() onDelete=new EventEmitter()
   constructor(){ }
 
   ngOnInit(): void{}
@@ -19,6 +21,10 @@ export class DeletconformComponent {
     // start event
 
     this.oncancel.emit()
+
+  }
+  deleteAcc(){
+    this.onDelete.emit(this.item)
 
   }
 }

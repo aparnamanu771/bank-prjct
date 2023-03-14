@@ -29,7 +29,7 @@
 </div>
 <!-- parent child communication -->
 
-<app-deletconform  (oncancel)="cancel()" [item]="acno"></app-deletconform>
+<app-deletconform (onDelete)="Delete($event)" (oncancel)="cancel()" [item]="acno"></app-deletconform>
 <!-- new event creation "delete no" -->
 
 
